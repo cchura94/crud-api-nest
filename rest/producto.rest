@@ -1,0 +1,20 @@
+### Listar GET
+GET http://127.0.0.1:3000/producto
+
+### Guardar POST
+POST http://127.0.0.1:3000/producto
+Content-Type: application/json
+
+{
+    "nombre": "ESCRITORIO",
+    "estado": true
+}
+
+### Mostrar GET
+GET http://127.0.0.1:3000/producto/1
+
+### Modificar PATCH
+PATCH http://127.0.0.1:3000/producto/34
+
+### Elimninar DELETE
+DELETE http://127.0.0.1:3000/producto/34

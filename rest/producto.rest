@@ -7,14 +7,21 @@ Content-Type: application/json
 
 {
     "nombre": "ESCRITORIO",
-    "estado": true
+    "estado": true,
+    "precio": 500
 }
 
 ### Mostrar GET
-GET http://127.0.0.1:3000/producto/1
+GET http://127.0.0.1:3000/producto/2
 
 ### Modificar PATCH
-PATCH http://127.0.0.1:3000/producto/34
+PATCH http://127.0.0.1:3000/producto/2
+Content-Type: application/json
+
+{
+    "nombre": "MONITOR modificado 2"
+}
 
 ### Elimninar DELETE
-DELETE http://127.0.0.1:3000/producto/34
+DELETE http://127.0.0.1:3000/producto/2
+

@@ -1,11 +1,12 @@
 import { Body, Controller, Delete, Get, Param, Patch, Post, Put } from '@nestjs/common';
 import { ProductoService } from './producto.service';
+import { CreateProductoDto } from './dto/create-producto.dto';
+import { UpdateProductoDto } from './dto/update-producto.dto';
 
 @Controller('producto')
 export class ProductoController {
 
     constructor(private readonly prodService: ProductoService){
-
     }
 
     @Get()
@@ -14,7 +15,8 @@ export class ProductoController {
     }
 
     @Post()
-    crear(@Body() datos: any){
+    crear(@Body() datos: CreateProductoDto){
+        
         return this.prodService.guardar(datos);
     }
 
@@ -24,13 +26,13 @@ export class ProductoController {
     }
 
     @Patch(':id')
-    modificar(){
-        return this.prodService.modificar(4, {});
+    modificar(@Param('id') id: number, @Body() datos: UpdateProductoDto){
+        return this.prodService.modificar(id, datos);
     }
 
     @Delete(':id')
-    funEliminar(){
-        return this.prodService.eliminar(4);
+    funEliminar(@Param('id') id: number){
+        return this.prodService.eliminar(id);
     }
 
 }
